@@ -2,10 +2,10 @@ const express = require('express');
 const cors = require('cors');
 
 const db = require('./db');
-const personRouter = require('./routes/person-router')
+const toDoRouter = require('./routes/todo-router');
 
 const app = express();
-const apiPort = 3000;
+const apiPort = 5000;
 
 
 
@@ -19,6 +19,6 @@ app.get('/', (req, res) => {
     res.send('Hello World!')
 })
 
-app.use('/api', personRouter);
+app.use('/api', toDoRouter);
 
 app.listen(apiPort, () => console.log(`Server running on port ${apiPort}`))
